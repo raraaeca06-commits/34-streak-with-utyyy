@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>34 Streak with Uty 🔥</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at 50% 35%, #fffafd, transparent 48%),
+    linear-gradient(145deg, #f8dce9, #fff1f6, #ead8f0);
+  font-family: Georgia, serif;
+}
+
+.scene {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.small-text {
+  color: #bd829f;
+  letter-spacing: 4px;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.main-title {
+  color: #b86c91;
+  font-size: clamp(35px, 9vw, 45px);
+  font-weight: bold;
+  text-shadow: 0 3px 12px #e7b4ca;
+  margin: 0;
+}
+
+.subtitle {
+  color: #c38aa7;
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+.stage {
+  height: 325px;
+  max-width: 360px;
+  margin: 8px auto 0;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  position: relative;
+}
+
+/* PHOTO UTY */
+.photo-frame {
+  position: absolute;
+  width: 94px;
+  height: 94px;
+  top: 0;
+  right: 5px;
+  z-index: 12;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(
+    135deg, #fff, #f2b5d0, #fff0f7, #d88daf
+  );
+  box-shadow:
+    0 0 0 3px #fff8fc,
+    0 5px 20px #c77fa555;
+  animation: floatPhoto 3s ease-in-out infinite;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.photo-heart {
+  position: absolute;
+  font-size: 20px;
+  top: -9px;
+  left: -8px;
+  animation: heartbeat 1.2s infinite;
+}
+
+.photo-star {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  font-size: 19px;
+  animation: sparkle 1.5s infinite alternate;
+}
+
+@keyframes floatPhoto {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@keyframes sparkle {
+  from { transform: scale(.8) rotate(0deg); opacity: .6; }
+  to { transform: scale(1.2) rotate(25deg); opacity: 1; }
+}
+
+.shadow {
+  position: absolute;
+  bottom: 15px;
+  width: 290px;
+  height: 24px;
+  border-radius: 50%;
+  background: #c58eae;
+  filter: blur(13px);
+}
+
+.cake {
+  position: relative;
+  width: 280px;
+  height: 235px;
+  z-index: 2;
+}
+
+.plate {
+  position: absolute;
+  bottom: 10px;
+  left: -15px;
+  width: 310px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(#fff, #e8c8db);
+  box-shadow: 0 5px 12px #b87e9b55;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  width: 280px;
+  height: 105px;
+  border-radius: 22px 22px 32px 32px;
+  background: linear-gradient(
+    100deg, #d47fa5, #f2b5ce 48%, #d47fa5
+  );
+  box-shadow:
+    inset 0 -11px 0 #bd6d94,
+    inset 0 5px 9px #fff2f7;
+}
+
+.top {
+  position: absolute;
+  bottom: 112px;
+  left: 30px;
+  width: 220px;
+  height: 78px;
+  border-radius: 25px 25px 17px 17px;
+  background: linear-gradient(
+    100deg, #f2c3d8, #ffeaf2 48%, #e9b0ca
+  );
+  box-shadow:
+    inset 0 -8px 0 #dfa1bd,
+    inset 0 5px 10px #fff6fa,
+    0 3px 8px #b96e9030;
+}
+
+.drip {
+  position: absolute;
+  bottom: 92px;
+  left: 30px;
+  width: 220px;
+  height: 35px;
+  background: linear-gradient(
+    90deg, #ffe5ef, #fff2f7, #f7d6e5
+  );
+  border-radius: 0 0 18px 18px;
+  clip-path: polygon(
+    0 0,100% 0,100% 65%,92% 100%,
+    82% 65%,72% 100%,60% 68%,
+    48% 100%,35% 65%,24% 100%,
+    12% 68%,0 90%
+  );
+}
+
+.name {
+  position: absolute;
+  bottom: 55px;
+  width: 100%;
+  text-align: center;
+  color: #fff9fc;
+  font-size: 27px;
+  letter-spacing: 5px;
+  font-weight: bold;
+  text-shadow: 1px 2px 5px #a9577d;
+  z-index: 5;
+}
+
+.hearts {
+  position: absolute;
+  bottom: 91px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  color: #dc478d;
+  font-size: 21px;
+  text-shadow: 0 2px 5px #d77ba7;
+  z-index: 7;
+}
+
+.hearts span {
+  animation: heartbeat 1.2s infinite ease-in-out;
+}
+
+.hearts span:nth-child(2) {
+  animation-delay: .2s;
+  font-size: 25px;
+}
+
+.hearts span:nth-child(3) {
+  animation-delay: .4s;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+
+.pearls {
+  position: absolute;
+  bottom: 29px;
+  width: 100%;
+  text-align: center;
+  color: #fff6fc;
+  font-size: 13px;
+  letter-spacing: 7px;
+  z-index: 5;
+}
+
+.flower {
+  position: absolute;
+  font-size: 23px;
+  z-index: 6;
+}
+
+.flower.a { bottom: 178px; left: 48px; }
+.flower.b { bottom: 165px; right: 45px; }
+.flower.c { bottom: 65px; left: 23px; font-size: 17px; }
+.flower.d { bottom: 62px; right: 23px; font-size: 17px; }
+
+.candle {
+  position: absolute;
+  bottom: 185px;
+  width: 9px;
+  height: 40px;
+  border-radius: 5px;
+  background: repeating-linear-gradient(
+    45deg, white 0 5px, #d88daf 5px 10px
+  );
+  z-index: 8;
+}
+
+.c1 { left: 95px; }
+.c2 { left: 135px; }
+.c3 { left: 175px; }
+
+.flame {
+  position: absolute;
+  bottom: 223px;
+  width: 13px;
+  height: 19px;
+  border-radius: 70% 30% 65% 35%;
+  background: radial-gradient(
+    ellipse at 50% 70%,
+    #fffbd1 0 20%, #ffe08a 45%, #ff9d9d 85%
+  );
+  transform-origin: 50% 90%;
+  filter: drop-shadow(0 0 9px #ffd27b);
+  animation: fire .45s infinite alternate ease-in-out;
+  z-index: 9;
+}
+
+.flame.a { left: 93px; animation-delay: .1s; }
+.flame.b { left: 133px; animation-delay: .25s; }
+.flame.c { left: 173px; animation-delay: .05s; }
+
+@keyframes fire {
+  0% {
+    transform: rotate(-12deg) scale(.88, 1.05);
+    filter: drop-shadow(0 0 6px #ffc56c);
+  }
+  50% {
+    transform: rotate(8deg) scale(1.08, .92);
+    filter: drop-shadow(0 0 13px #ffc56c);
+  }
+  100% {
+    transform: rotate(-5deg) scale(.95, 1.12);
+    filter: drop-shadow(0 0 10px #ffad65);
+  }
+}
+
+.note {
+  color: #bb7c9e;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-top: -2px;
+}
+
+.music-button {
+  margin-top: 16px;
+  border: 1px solid #e6b5cc;
+  border-radius: 30px;
+  padding: 12px 23px;
+  color: #ae668b;
+  background: #fff9fc;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  box-shadow: 0 5px 15px #dba9c533;
+  cursor: pointer;
+}
+
+.petal {
+  position: fixed;
+  top: -35px;
+  pointer-events: none;
+  z-index: 1;
+  animation: falling linear infinite;
+  opacity: .8;
+}
+
+@keyframes falling {
+  0% {
+    transform: translateY(-30px) rotate(0deg);
+    opacity: 0;
+  }
+  15% { opacity: .9; }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.glow {
+  position: fixed;
+  color: white;
+  font-size: 18px;
+  animation: glowing 2s infinite alternate;
+  z-index: 1;
+}
+
+@keyframes glowing {
+  from { opacity: .3; transform: scale(.7); }
+  to { opacity: 1; transform: scale(1.3); }
+}
+
+@media(max-width: 380px) {
+  .cake {
+    transform: scale(.88);
+    transform-origin: bottom center;
+  }
+  .main-title { font-size: 35px; }
+  .photo-frame {
+    width: 82px;
+    height: 82px;
+    right: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="decorations"></div>
+
+<div class="scene">
+  <div class="small-text">A LITTLE ACHIEVEMENT ✨</div>
+  <h1 class="main-title">34 streak 🔥🔥</h1>
+  <div class="subtitle">THIRTY FOUR DAYS OF KEEPING THE STREAK</div>
+
+  <div class="stage">
+
+    <!-- Foto Uty -->
+    <div class="photo-frame">
+      <img src="uty.jpg" alt="Foto Uty">
+      <span class="photo-heart">💗</span>
+      <span class="photo-star">✧</span>
+    </div>
+
+    <div class="shadow"></div>
+
+    <div class="cake">
+      <div class="plate"></div>
+      <div class="bottom"></div>
+      <div class="top"></div>
+      <div class="drip"></div>
+
+      <div class="hearts">
+        <span>♥</span>
+        <span>♥</span>
+        <span>♥</span>
+      </div>
+
+      <div class="name">UTY</div>
+      <div class="pearls">• · • · • · •</div>
+
+      <span class="flower a">🌷</span>
+      <span class="flower b">🌸</span>
+      <span class="flower c">✿</span>
+      <span class="flower d">✿</span>
+
+      <div class="candle c1"></div>
+      <div class="candle c2"></div>
+      <div class="candle c3"></div>
+
+      <div class="flame a"></div>
+      <div class="flame b"></div>
+      <div class="flame c"></div>
+    </div>
+  </div>
+
+  <div class="note">30 days and still going strong ♡</div>
+
+  <button class="music-button" id="musicBtn">
+    ♫ play happy music
+  </button>
+</div>
+
+<script>
+/* Falling decorations */
+const area = document.getElementById("decorations");
+const symbols = ["🌸", "🌷", "♡", "✿", "💗", "✨"];
+
+for (let i = 0; i < 30; i++) {
+  const el = document.createElement("span");
+  el.className = "petal";
+  el.textContent = symbols[
+    Math.floor(Math.random() * symbols.length)
+  ];
+  el.style.left = Math.random() * 100 + "vw";
+  el.style.fontSize = (12 + Math.random() * 12) + "px";
+  el.style.animationDuration = (8 + Math.random() * 9) + "s";
+  el.style.animationDelay = (-Math.random() * 15) + "s";
+  area.appendChild(el);
+}
+
+for (let i = 0; i < 14; i++) {
+  const el = document.createElement("span");
+  el.className = "glow";
+  el.textContent = "✧";
+  el.style.left = Math.random() * 100 + "vw";
+  el.style.top = Math.random() * 100 + "vh";
+  el.style.animationDelay = Math.random() * 3 + "s";
+  area.appendChild(el);
+}
+
+/* Cheerful original melody */
+let audioContext;
+let playing = false;
+let timer;
+let index = 0;
+
+const melody = [
+  523.25, 659.25, 783.99, 659.25,
+  587.33, 698.46, 880, 698.46,
+  659.25, 783.99, 1046.5, 783.99,
+  698.46, 880, 987.77, 880,
+  783.99, 880, 1046.5, 1174.66,
+  1046.5, 880, 783.99, 659.25
+];
+
+function sound(freq, start, duration, volume, type) {
+  const osc = audioContext.createOscillator();
+  const gain = audioContext.createGain();
+
+  osc.type = type;
+  osc.frequency.setValueAtTime(freq, start);
+
+  gain.gain.setValueAtTime(.001, start);
+  gain.gain.exponentialRampToValueAtTime(
+    volume, start + .025
+  );
+  gain.gain.exponentialRampToValueAtTime(
+    .001, start + duration
+  );
+
+  osc.connect(gain);
+  gain.connect(audioContext.destination);
+
+  osc.start(start);
+  osc.stop(start + duration + .05);
+}
+
+function playMusic() {
+  if (!playing) return;
+
+  const now = audioContext.currentTime;
+  const note = melody[index % melody.length];
+
+  sound(note, now, .32, .075, "triangle");
+  sound(note * 2, now + .04, .22, .025, "sine");
+
+  if (index % 4 === 0) {
+    sound(261.63, now, .45, .035, "sine");
+  }
+
+  if (index % 2 === 0) {
+    sound(392, now + .12, .25, .025, "triangle");
+  }
+
+  index++;
+  timer = setTimeout(playMusic, 340);
+}
+
+const button = document.getElementById("musicBtn");
+
+async function startMusic() {
+  if (!audioContext) {
+    audioContext = new (
+      window.AudioContext || window.webkitAudioContext
+    )();
+  }
+
+  if (audioContext.state === "suspended") {
+    await audioContext.resume();
+  }
+
+  if (!playing) {
+    playing = true;
+    button.textContent = "♫ pause music";
+    playMusic();
+  }
+}
+
+function stopMusic() {
+  playing = false;
+  clearTimeout(timer);
+  button.textContent = "♫ play happy music";
+}
+
+button.addEventListener("click", async () => {
+  if (playing) stopMusic();
+  else await startMusic();
+});
+
+/* Try autoplay */
+window.addEventListener("load", () => {
+  startMusic().catch(() => {
+    button.textContent = "♫ tap to play music";
+  });
+});
+</script>
+
+</body>
+</html>
+
